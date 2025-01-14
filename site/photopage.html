@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотогаллерея</title>
+    <link rel="stylesheet" href="css/photopage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nature Image Gallery</h1>
+
+        <div class="img-container">
+            <div class="img">
+             <img src="photo/photo1.jpg" alt="">   
+            </div>
+
+            <div class="img">
+                <img src="photo/photo2.jpg" alt="">   
+               </div>
+
+               <div class="img">
+                <img src="photo/photo3.jpg" alt="">   
+               </div>
+               
+               <div class="img">
+                <img src="photo/photo4.jpg" alt="">   
+               </div>
+
+               <div class="img">
+                <img src="photo/photo5.jpg" alt="">   
+               </div>
+        <div class="pop-up">
+        <span>&times;</span>
+        <img src="photo/photo5.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="text">
+        <p><a href="index.html">Назад</a></p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.img-container img').forEach(img =>{
+            img.onclick = () => {
+                document.querySelector('.pop-up').style.display = 'block';
+                document.querySelector('.pop-up img').src = img.getAttribute('src');
+            }
+        });
+        document.querySelector('.pop-up span').onclick = () => {
+            document.querySelector('.pop-up').style.display = 'none';   
+    }
+    </script>
+
+</body>
+</html>
